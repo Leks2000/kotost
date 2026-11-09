@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Рыбы зовёт проверить совместимость</title>
+<meta name="description" content="Выбери свой знак, и я посчитаю, как вы сходитесь в любви, дружбе, работе и общении.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kotost">
+<meta property="og:title" content="Рыбы зовёт проверить совместимость">
+<meta property="og:description" content="Выбери свой знак, и я посчитаю, как вы сходитесь в любви, дружбе, работе и общении.">
+<meta property="og:url" content="https://leks2000.github.io/kotost/c/pisces/">
+<meta property="og:image" content="https://leks2000.github.io/kotost/og/ru/pisces.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1A0F1D">
+<link rel="icon" href="https://leks2000.github.io/kotost/kotost.png">
+<link rel="alternate" hreflang="en" href="https://leks2000.github.io/kotost/en/c/pisces/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family: KSymbols; src: url('https://leks2000.github.io/kotost/KSymbols.ttf') format('truetype'); font-display: block; }
+:root {
+  --bg: #1A0F1D; --surface: #2B1B30; --surface-hi: #3A2540; --night: #221E40; --border: #4A3350;
+  --text: #F7EDE6; --soft: #DCC9D6; --muted: #BCA5B8; --gold: #E8C27A; --gold-light: #F6E2A8; --on-cta: #2A1530;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse 120% 60% at 50% -10%, #3a1f45 0%, transparent 60%),
+    radial-gradient(1.5px 1.5px at 12% 22%, #f6e2a855 50%, transparent 51%),
+    radial-gradient(1px 1px at 78% 14%, #f6e2a866 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 88% 46%, #f6e2a844 50%, transparent 51%),
+    radial-gradient(1px 1px at 22% 64%, #f6e2a855 50%, transparent 51%),
+    radial-gradient(1px 1px at 64% 82%, #f6e2a844 50%, transparent 51%);
+  background-attachment: fixed;
+  color: var(--text);
+  font: 400 16px/1.5 Inter, system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+.valance { display: block; width: 100%; height: 34px; }
+.wrap { max-width: 460px; margin: 0 auto; padding: 4px 16px 40px; }
+.top { display: flex; align-items: center; justify-content: space-between; margin: 6px 0 18px; }
+.brand { font: 600 15px Unbounded, sans-serif; letter-spacing: .14em; color: var(--gold); text-decoration: none; }
+.lang { color: var(--muted); font-size: 13px; text-decoration: none; border: 1px solid var(--border); border-radius: 99px; padding: 4px 12px; }
+.kicker { text-align: center; color: var(--muted); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 6px; }
+h1 { font: 600 24px/1.25 Unbounded, sans-serif; text-align: center; margin: 0 0 18px; text-wrap: balance; }
+.sym { font-family: KSymbols, Inter, sans-serif; }
+.bubble { display: flex; gap: 12px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 12px 14px; margin-bottom: 20px; }
+.bubble img { width: 52px; height: 52px; border-radius: 50%; flex: none; border: 1px solid #e8c27a99; }
+.bubble p { margin: 0; color: var(--soft); font-size: 15px; }
+.pair { display: flex; align-items: flex-start; justify-content: space-evenly; margin-bottom: 14px; }
+.slot { background: none; border: 0; padding: 0; color: inherit; font: inherit; display: flex; flex-direction: column; align-items: center; gap: 6px; width: 120px; cursor: pointer; }
+.slot[disabled] { cursor: default; }
+.badge { width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center; background: var(--night); border: 1px solid #e8c27ab3; color: var(--gold-light); font-size: 38px; transition: transform .25s, box-shadow .25s; }
+.badge.empty { background: none; border-color: #e8c27a99; color: var(--gold); font: 300 34px Inter, sans-serif; }
+.slot.active .badge { box-shadow: 0 0 0 3px #e8c27a33, 0 0 24px #e8c27a40; }
+.slot .cap { font-size: 12px; color: var(--muted); }
+.slot .nm { font-weight: 700; font-size: 15px; }
+.heart { color: var(--gold); font-size: 26px; margin-top: 22px; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 6px 0 12px; }
+.grid button { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; color: var(--text); padding: 10px 2px 8px; font: 500 12px Inter, sans-serif; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; transition: border-color .2s, background .2s; }
+.grid button .sym { font-size: 22px; color: var(--gold-light); }
+.grid button:hover, .grid button.on { border-color: var(--gold); background: var(--surface-hi); }
+.date { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--muted); font-size: 13px; margin-bottom: 22px; flex-wrap: wrap; }
+.date input { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: 6px 10px; font: inherit; color-scheme: dark; }
+.card { background: var(--surface); border: 1px solid #e8c27a66; border-radius: 20px; padding: 18px 16px; animation: up .5s ease both; }
+@keyframes up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.total { font: 600 52px/1 Unbounded, sans-serif; color: var(--gold); text-align: center; margin: 4px 0 6px; }
+.who { text-align: center; color: var(--muted); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.title { font: 600 17px Unbounded, sans-serif; text-align: center; margin-bottom: 12px; }
+.text { margin: 0 0 14px; font-size: 15px; }
+.bar { margin-top: 12px; }
+.bar .row { display: flex; justify-content: space-between; font-weight: 700; font-size: 14px; }
+.bar .row b { color: var(--gold); }
+.track { height: 6px; border-radius: 99px; background: #ffffff14; margin: 5px 0 4px; overflow: hidden; }
+.fill { height: 100%; width: 0; border-radius: 99px; background: linear-gradient(90deg, #b8894a, var(--gold-light)); transition: width .9s cubic-bezier(.2,.8,.2,1); }
+.bar .line { color: var(--muted); font-size: 13px; }
+.cta { margin-top: 18px; text-align: center; }
+.cta p { color: var(--soft); font-size: 14px; margin: 0 0 12px; }
+.btn { display: block; width: 100%; border-radius: 99px; padding: 15px 18px; font: 600 15px Unbounded, sans-serif; text-decoration: none; text-align: center; cursor: pointer; border: 0; }
+.btn.main { background: var(--gold); color: var(--on-cta); box-shadow: 0 6px 24px #e8c27a33; }
+.btn.line { background: none; color: var(--gold); border: 1px solid #e8c27a99; margin-top: 10px; font-size: 14px; padding: 13px 18px; }
+.alt { display: inline-block; margin-top: 10px; color: var(--muted); font-size: 13px; }
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--surface-hi); border: 1px solid var(--border); padding: 10px 16px; border-radius: 99px; font-size: 14px; opacity: 0; transition: opacity .3s; pointer-events: none; }
+.toast.on { opacity: 1; }
+footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 28px; }
+.hide { display: none !important; }
+@media (prefers-reduced-motion: reduce) { .card { animation: none; } .fill, .badge { transition: none; } }
+</style>
+</head>
+<body>
+<svg class="valance" viewBox="0 0 400 34" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0H400V14Q387.5 34 375 14Q362.5 34 350 14Q337.5 34 325 14Q312.5 34 300 14Q287.5 34 275 14Q262.5 34 250 14Q237.5 34 225 14Q212.5 34 200 14Q187.5 34 175 14Q162.5 34 150 14Q137.5 34 125 14Q112.5 34 100 14Q87.5 34 75 14Q62.5 34 50 14Q37.5 34 25 14Q12.5 34 0 14Z" fill="#2B1B30" stroke="#E8C27A" stroke-opacity=".55" stroke-width="1"/>
+</svg>
+<div class="wrap">
+  <div class="top">
+    <a class="brand" href="https://leks2000.github.io/kotost/">KOTOST</a>
+    <a class="lang" href="https://leks2000.github.io/kotost/en/c/pisces/" hreflang="en">English</a>
+  </div>
+  <p class="kicker" id="kicker"></p>
+  <h1 id="h1"></h1>
+  <div class="bubble"><img src="https://leks2000.github.io/kotost/kotost.png" alt="Kotost" width="52" height="52"><p id="say"></p></div>
+
+  <div class="pair">
+    <button class="slot" id="slotA" type="button"><span class="badge sym" id="badgeA"></span><span class="cap" id="capA"></span><span class="nm" id="nmA"></span></button>
+    <svg class="heart" aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-9.2-9.2C1.6 7.5 3.7 4.5 7 4.5c2 0 3.3 1.1 5 3 1.7-1.9 3-3 5-3 3.3 0 5.4 3 4.2 6.3C19.5 15.4 12 20 12 20z"/></svg>
+    <button class="slot" id="slotB" type="button"><span class="badge sym" id="badgeB"></span><span class="cap" id="capB"></span><span class="nm" id="nmB"></span></button>
+  </div>
+  <div class="grid" id="grid" role="group"></div>
+  <label class="date" id="dateRow"><span id="dateLabel"></span><input type="date" id="date" min="1900-01-01" max="2100-12-31"></label>
+
+  <section id="result" class="hide" aria-live="polite"></section>
+
+  <div class="cta" id="cta">
+    <p id="ctaText"></p>
+    <a class="btn main" id="store" href="#" rel="noopener"></a>
+    <a class="alt" id="store2" href="#" rel="noopener"></a>
+    <button class="btn line hide" id="invite" type="button"></button>
+  </div>
+  <footer id="foot"></footer>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+// Совместимость по знакам: порт app/lib/astro/compat.dart (signCompat). Менять только вместе с Dart:
+// тест app/test/compat_web_test.dart сверяет 144 пары с выводом этого файла (share_site/test_compat.js).
+(function (root) {
+  const SIGNS = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo',
+    'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
+  const SPHERES = ['love', 'friend', 'work', 'talk'];
+  // База по расстоянию между знаками (любовь, дружба, работа, общение).
+  const BASE = [
+    [78, 85, 70, 88], // один знак
+    [62, 68, 74, 60], // соседи
+    [84, 90, 80, 92], // секстиль
+    [58, 55, 66, 52], // квадрат
+    [92, 88, 78, 86], // трин
+    [60, 58, 64, 56], // через пять знаков
+    [80, 64, 60, 70], // оппозиция
+  ];
+
+  function idx(s) {
+    const i = SIGNS.indexOf(s);
+    if (i < 0) throw new Error('unknown sign ' + s);
+    return i;
+  }
+
+  // 0..6, как signDistance в Dart (там % всегда неотрицательный).
+  function distance(a, b) {
+    const d = (((idx(b) - idx(a)) % 12) + 12) % 12;
+    return d > 6 ? 12 - d : d;
+  }
+
+  function compat(a, b) {
+    const ia = idx(a), ib = idx(b);
+    const row = BASE[distance(a, b)];
+    const spheres = {};
+    let sum = 0;
+    for (let i = 0; i < SPHERES.length; i++) {
+      const wiggle = (((ia + ib) * 7 + ia * ib + i * 5) % 9) - 4;
+      const v = Math.min(97, Math.max(40, row[i] + wiggle));
+      spheres[SPHERES[i]] = v;
+      sum += v;
+    }
+    // Dart round(): от нуля на .5, для положительных то же, что Math.round.
+    return { total: Math.round(sum / SPHERES.length), spheres };
+  }
+
+  // Ключ текста пары в общем кэше ИИ: cp:<знак>:<знак> по порядку зодиака.
+  function pieceKey(a, b) {
+    return idx(a) <= idx(b) ? 'cp:' + a + ':' + b : 'cp:' + b + ':' + a;
+  }
+
+  // Знак по дате (тропический, границы по средним датам; на стыке знаков точнее в приложении).
+  const STARTS = [[3, 21], [4, 20], [5, 21], [6, 21], [7, 23], [8, 23], [9, 23], [10, 23], [11, 22], [12, 22], [1, 20], [2, 19]];
+  function signOfDate(month, day) {
+    for (let i = 11; i >= 0; i--) {
+      const j = (i + 1) % 12;
+      const [m0, d0] = STARTS[i];
+      const [m1, d1] = STARTS[j];
+      const after = month > m0 || (month === m0 && day >= d0);
+      const before = month < m1 || (month === m1 && day < d1);
+      if (m0 < m1 ? after && before : after || before) return SIGNS[i];
+    }
+    return SIGNS[0];
+  }
+
+  const api = { SIGNS, SPHERES, distance, compat, pieceKey, signOfDate };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api;
+  else root.KotostCompat = api;
+})(this);
+
+</script>
+<script>
+const D = {"signs":[{"id":"aries","name":"Овен","glyph":"♈"},{"id":"taurus","name":"Телец","glyph":"♉"},{"id":"gemini","name":"Близнецы","glyph":"♊"},{"id":"cancer","name":"Рак","glyph":"♋"},{"id":"leo","name":"Лев","glyph":"♌"},{"id":"virgo","name":"Дева","glyph":"♍"},{"id":"libra","name":"Весы","glyph":"♎"},{"id":"scorpio","name":"Скорпион","glyph":"♏"},{"id":"sagittarius","name":"Стрелец","glyph":"♐"},{"id":"capricorn","name":"Козерог","glyph":"♑"},{"id":"aquarius","name":"Водолей","glyph":"♒"},{"id":"pisces","name":"Рыбы","glyph":"♓"}],"spheres":{"love":"Любовь","friend":"Дружба","work":"Работа","talk":"Общение"},"dist":{"0":{"title":"Зеркало","text":"Вы похожи, как отражение: понимаете друг друга с полуслова. Сложность одна: одинаковые слабости, и уступать никто не хочет.","love":"легко, но нужно больше нового","friend":"одни шутки и одни интересы","work":"сильны в одном, проседаете в одном","talk":"понимаете без слов"},"1":{"title":"Соседи","text":"Вы очень разные, хотя рядом по кругу. Каждый видит в другом то, чего не хватает ему самому, и этому стоит учиться.","love":"притяжение через непохожесть","friend":"нужно время привыкнуть","work":"хорошо дополняете друг друга","talk":"говорите на разных языках"},"2":{"title":"Союзники","text":"Лёгкая и дружная пара. Вы подзаряжаете друг друга и вместе быстро находите общее дело.","love":"тепло и с интересом","friend":"одна из лучших пар для дружбы","work":"идеи и дело вместе","talk":"разговоры без конца"},"3":{"title":"Искры","text":"Между вами напряжение, и оно же двигает. Споров будет много, но и роста тоже, если учиться слышать.","love":"страсть и споры рядом","friend":"дружба через уважение","work":"нужны чёткие роли","talk":"договариваться нужно словами"},"4":{"title":"Одна стихия","text":"Вы из одной стихии, и рядом спокойно. Понимаете ритм друг друга и легко строите общее.","love":"одна из самых гармоничных пар","friend":"легко и надолго","work":"ровно, без рывков","talk":"понимаете, что важно другому"},"5":{"title":"Разные миры","text":"Вам непросто понять логику друг друга. Пара держится на интересе и готовности подстраиваться.","love":"нужна взаимная гибкость","friend":"растёт медленно","work":"лучше на разных задачах","talk":"проговаривайте ожидания"},"6":{"title":"Магниты","text":"Противоположности притягиваются. Вы видите в другом свою вторую половину, но перетягивать канат тоже будете.","love":"сильное притяжение","friend":"через спор к уважению","work":"две стороны одного дела","talk":"ищите середину"}},"pieces":{"cp:aries:aries":"Мур, два Овна звучат как яркое и страстное пламя, где в любви и дружбе всегда много энергии. Вам легко увлекаться общими идеями и двигаться вперед, а уступка понадобится в те моменты, когда каждый захочет командовать парадом.","cp:aries:taurus":"Овен и Телец звучат как яркий огонь рядом с надёжной землей, в любви и дружбе вам тепло, но спорить можете о скорости. Легко строить общие планы, а уступка нужна в темпе жизни.","cp:aries:gemini":"Овен и Близнецы звучат как искра, разгорающаяся от ветра, в любви и дружбе вам весело и интересно. Легко общаться обо всём на свете, а уступка нужна в умении слушать.","cp:aries:cancer":"Овен и Рак звучат как бурный костёр рядом с уютным очагом, в любви и дружбе вы дополняете друг друга. Легко заботиться близким кругом, а уступка нужна в выражении эмоций.","cp:aries:leo":"В любви и дружбе вы звучите как яркий и страстный дуэт, полный энергии и тепла. Вам легко увлекать друг друга общими идеями и приключениями. Уступка нужна там, где каждый хочет быть главным.","cp:aries:virgo":"Овен и Дева звучат как вдохновение, встречающее порядок, в любви и дружбе вы учитесь друг у друга. Легко решать практичные задачи, а уступка нужна в мелочах.","cp:aries:libra":"Овен и Весы звучат как яркая встреча противоположностей, в любви и дружбе вам гармонично вместе. Легко находить компромиссы, а уступка нужна в принятии решений.","cp:aries:scorpio":"Овен и Скорпион звучат как два сильных характера со стихией страсти, в любви и дружбе вам глубоко и интересно. Легко идти к общим целям, а уступка нужна в спорах.","cp:aries:sagittarius":"Овен и Стрелец звучат как двойной огонь приключений, в любви и дружбе вам никогда не скучно. Легко мечтать и открывать новое, а уступка нужна в бытовых мелочах.","cp:aries:capricorn":"Овен и Козерог звучат как союз энергии и упорства, в любви и дружбе вы сильная команда. Легко добиваться задуманного, а уступка нужна в выборе метода.","cp:aries:aquarius":"Овен и Водолей звучат как творческий союз свободных людей, в любви и дружбе вам легко понимать идеи друг друга. Легко придумывать необычное, а уступка нужна в стабильности.","cp:aries:pisces":"Овен и Рыбы звучат как союз решимости и мягкости, в любви и дружбе вы вдохновляете друг друга. Легко чувствовать настроение партнера, а уступка нужна в проявлении чувств.","cp:taurus:taurus":"Мур, два земных знака создают очень уютный и стабильный мир в любви и дружбе. Вам легко вместе обустраивать быт и наслаждаться покоем, но иногда уступка нужна в гибкости и принятии перемен.","cp:taurus:gemini":"Здесь земная основа и воздушная лёгкость звучат как интересная песня противоположностей. Вам легко делиться новостями и узнавать новое, а уступка понадобится в темпе жизни и привычке к тишине.","cp:taurus:cancer":"Нежная и заботливая пара, где тепло и в дружбе, и в романтике льётся через край. Вам легко понимать друг друга с полуслова, а уступка пригодится в умении вовремя отпускать старые обиды.","cp:taurus:leo":"Яркий союз земного спокойствия и солнечного огня привлекает внимание своей надёжностью. Вам легко восхищаться друг другом и строить общие планы, а уступка нужна в стремлении всегда быть правыми.","cp:taurus:virgo":"Практичная и гармоничная пара, звучащая в унисон в любых делах. Вам легко планировать совместное будущее и отдыхать, а уступка потребуется в мягкости к чужим маленьким несовершенствам.","cp:taurus:libra":"В этом союзе земная основа встречается с воздушной элегантностью и тягой к красоте. Вам легко находить компромиссы и окружать себя эстетикой, а уступка важна в решении бытовых вопросов.","cp:taurus:scorpio":"Глубокая и страстная связь, где много преданности и силы. Вам легко доверять друг другу самые сокровенные тайны, а уступка необходима в умении не давить на партнера своей ревностью.","cp:taurus:sagittarius":"Союз основательного знака и любителя приключений звучит очень бодряще. Вам легко расширять кругозор друг друга, а уступка нужна в выборе между уютным домом и спонтанными поездками.","cp:taurus:capricorn":"Очень прочный и надёжный дуэт, нацеленный на долгие годы вместе. Вам легко разделять амбиции и двигаться к цели, а уступка пригодится в умении расслабляться и отдыхать.","cp:taurus:aquarius":"Необычное сочетание стабильности и тяги к свободе открывает новые горизонты. Вам легко общаться на любые темы, а уступка потребуется в принятии потребности каждого побыть в тишине.","cp:taurus:pisces":"Телец и Рыбы звучат мягко и уютно, создавая тёплую гавань в любви и дружбе. Им легко понимать друг друга без слов благодаря общей душевности. Уступка понадобится тогда, когда практичность одного столкнется с романтичными грёзами другого.","cp:gemini:gemini":"Близнецы и Близнецы звучат как звонкий диалог, полный идей в дружбе и романтике. Им легко вместе познавать новое и никогда не бывает скучно. Уступка потребуется для того, чтобы иногда замедлиться и услышать тишину.","cp:gemini:cancer":"Близнецы и Рак звучат необычно, сочетая лёгкость ветра и глубину воды в любых отношениях. Им легко находить баланс между общительностью и домашним уютом. Уступка нужна, когда Близнецам хочется свободы, а Раку больше тепла и внимания.","cp:gemini:leo":"Близнецы и Лев звучат ярким и весёлым дуэтом, где много радости и вдохновения. Им легко организовывать совместные праздники и вдохновлять друг друга на подвиги. Уступка потребуется в моменты, когда важно уступить сцену партнёру.","cp:gemini:virgo":"Близнецы и Дева звучат как союз разума и любопытства, где ценят умные беседы. Им легко планировать дела и обсуждать интересные книги. Уступка нужна, чтобы Близнецы меньше спешили, а Дева проще относилась к хаосу.","cp:gemini:libra":"Близнецы и Весы звучат как лёгкая мелодия взаимопонимания и красоты. Им легко находить общий язык и окружать себя приятными людьми. Уступка понадобится в те дни, когда нужно принять важное решение, а не просто спорить.","cp:gemini:scorpio":"Близнецы и Скорпион звучат контрастно, соединяя жажду общения и глубокие тайны. Им легко учиться друг у друга новому опыту. Уступка важна, когда Близнецам хочется поверхностной легкости, а Скорпиону полной откровенности.","cp:gemini:sagittarius":"Близнецы и Стрелец звучат как пара исследователей, готовых к любым приключениям. Им легко путешествовать и открывать неизведанные горизонты. Уступка пригодится, чтобы вовремя замечать земные заботы, а не только мечтать о далях.","cp:gemini:capricorn":"Близнецы и Козерог звучат как союз гибкости и упорства, где можно многому научиться. Им легко распределять роли в совместных делах. Уступка потребуется, когда Близнецы зовут гулять, а Козерог предпочитает тишину и работу.","cp:gemini:aquarius":"Близнецы и Водолей звучат на одной волне свободолюбия и дружбы. Им легко делиться самыми смелыми мыслями и планами на будущее. Уступка нужна, чтобы иногда спускаться с небес на землю и решать простые бытовые задачи.","cp:gemini:pisces":"Близнецы и Рыбы звучат как легкий весенний ветерок, полный творческих идей и мечтаний. Легче всего вам находить общий язык в беседах по душам, а уступка понадобится там, где нужно прислушаться к практической стороне жизни. В дружбе и любви вы дарите друг другу вдохновение и свободу.","cp:cancer:cancer":"Рак и Рак звучат как тихая гавань, где всегда тепло, уютно и безопасно. Легче всего вам понимать друг друга с полуслова в создании домашнего тепла, а уступка понадобится в моментах, когда эмоции бьют через край. В любви и дружбе вы становитесь надежным пристанищем друг для друга.","cp:cancer:leo":"Рак и Лев звучат как яркий дуэт нежности и благородного тепла. Легче всего вам делиться заботой и согревать друг друга душевным светом, а уступка понадобится в балансировке между потребностью Рака в тишине и жаждой Льва сиять. В дружбе и любви вы прекрасно дополняете эмоциональные миры друг друга.","cp:cancer:virgo":"Рак и Дева создают уютный мир, где нежные чувства переплетаются с надежной поддержкой. Вам легко находить общий язык в быту и тихих вечерах, а уступка понадобится в выражении эмоций, ведь Дева опирается на логику, а Рак живет переживаниями.","cp:cancer:libra":"Рак и Весы звучат как мягкая мелодия, полная романтики и стремления к гармонии. В любви и дружбе вам легко окружать друг друга красотой и заботой, а уступка потребуется в моменты принятия решений, так как Весы колеблются, а Рак ждет уверенности.","cp:cancer:scorpio":"Рак и Скорпион образуют глубокий и страстный союз, где сердца бьются в унисон. Вам легко понимать друг друга без слов и хранить общие тайны, а уступка важна в спорах, потому что оба знака умеют долго помнить обиды.","cp:cancer:sagittarius":"Рак и Стрелец совмещают тягу к домашнему теплу и жажду дальних странствий. В дружбе и любви вам легко делиться вдохновением и учиться друг у друга разному взгляду на мир, а уступка нужна в темпе жизни, ведь Стрелец спешит вперед, а Раку важно замедлиться.","cp:cancer:capricorn":"Рак и Козерог дополняют друг друга, создавая прочный фундамент для любых отношений. Вам легко планировать будущее и чувствовать себя защищенными рядом, а уступка пригодится в проявлении чувств, так как Козерог сдержан, а Рак ждет душевного тепла.","cp:cancer:aquarius":"Рак и Водолей соединяют эмоциональную глубину и стремление к свободе. В любви и дружбе вам легко находить неожиданные темы для разговоров и удивлять друг друга, а уступка понадобится в личных границах, ведь Рак ищет больше близости, а Водолей ценит простор.","cp:cancer:pisces":"Рак и Рыбы звучат как волшебная сказка, полная интуитивного понимания и нежности. Вам легко плыть по течению общих мечтаний и чувствовать настроение партнера, а уступка будет полезна в практических делах, чтобы не терять опору под ногами.","cp:leo:leo":"Лев и Лев сияют вместе ярче солнца, наполняя каждый день праздником и щедростью. В любви и дружбе вам легко восхищаться друг другом и устраивать незабываемые моменты, а уступка потребуется в праве на лидерство, ведь каждый хочет быть в центре внимания.","cp:leo:virgo":"Лев и Дева объединяют яркую харизму и мудрый практичный подход. Вам легко организовывать совместные проекты и делиться успехом, а уступка важна в мелочах, так как Лев любит масштабные жесты, а Дева обращает внимание на детали.","cp:leo:libra":"Лев и Весы создают невероятно красивый и общительный союз. В дружбе и любви вам легко блистать в компании и находить радость в эстетике, а уступка нужна в принятии важных шагов, поскольку Весы взвешивают каждый шаг, а Лев действует решительно.","cp:leo:scorpio":"Лев и Скорпион звучат как мощный союз страсти и глубоких чувств. Легче всего вам объединяться ради общих целей и масштабных задач, а уступка понадобится в вопросах личного лидерства. В любви и дружбе этот тандем наполнен сильной преданностью и яркостью.","cp:leo:sagittarius":"Лев и Стрелец звучат как звонкий аккорд оптимизма и приключений. Легче всего вам планировать поездки и радоваться жизни вместе, а уступка понадобится в спорах о мелких деталях. В дружбе и любви вас ждет много солнца и совместных открытий.","cp:leo:capricorn":"Лев и Козерог звучат как союз амбиций и уверенности. Легче всего вам двигаться к намеченным целям и поддерживать друг друга в делах, а уступка понадобится в умении вовремя расслабиться. В любви и дружбе вы цените надежность и уважение.","cp:leo:aquarius":"Лев и Водолей звучат как искра, зажигающая самые необычные идеи. Легче всего вам общаться на любые темы и генерировать творческие замыслы, а уступка понадобится в балансе между вниманием к партнеру и жаждой личной свободы. В дружбе и любви скучать вам точно не придется.","cp:leo:pisces":"Лев и Рыбы звучат как сказочная история, где творчество встречается с нежностью. Легче всего вам мечтать и погружаться в мир искусства, а уступка понадобится в понимании реального быта. В любви и дружбе вы открываете друг другу новые грани воображения.","cp:virgo:virgo":"Дева и Дева звучат как слаженный механизм, где все лежит на своих местах. Легче всего вам наводить порядок и планировать дела, а уступка понадобится в моменты отдыха от излишней критики. В дружбе и любви вы цените стабильность и заботу о деталях.","cp:virgo:libra":"Дева и Весы звучат как спокойная мелодия интеллекта и эстетики. Легче всего вам создавать уютную обстановку и вести приятные беседы, а уступка понадобится в принятии быстрых решений. В любви и дружбе вы привносите в жизнь друг друга баланс и красоту.","cp:virgo:scorpio":"Мур, Дева и Скорпион звучат как глубокая и преданная симфония в любви и дружбе. Звёзды подсказывают, что вам легко понимать друг друга с полуслова, а уступка понадобится в умении вовремя отпускать контроль. Вместе вы создаете надежный и уютный мир.","cp:virgo:sagittarius":"Дева и Стрелец звучат как яркий дуэт земной практичности и огненного поиска. Небо говорит о том, что вам легко находить общие темы для увлекательных разговоров, а уступка нужна в принятии разного темпа жизни. В дружбе и любви вы отлично дополняете друг друга.","cp:virgo:capricorn":"Мур, Дева и Козерог звучат как спокойная и прочная мелодия двух земных стихий. Звёзды подсказывают, что вам легко планировать общее будущее и доверять друг другу, а уступка пригодится в проявлении мягких эмоций. Вместе вы непобедимы в любых делах.","cp:virgo:aquarius":"Дева и Водолей звучат как необычный союз порядка и озарения. Небо говорит о том, что вам легко учиться друг у друга новому, а уступка потребуется в вопросах привычного уклада жизни. В любви и дружбе вы открываете друг другу новые горизонты.","cp:virgo:pisces":"Мур, Дева и Рыбы звучат как нежная песня противоположностей, притягивающих друг друга. Звёзды подсказывают, что вам легко дарить тепло и заботу, а уступка нужна в поиске баланса между логикой и чувствами. Вместе вы создаете очень уютное пространство.","cp:libra:libra":"Весы и Весы звучат как гармоничный дуэт эстетов и дипломатов. Небо говорит о том, что вам легко наслаждаться обществом друг друга и искусством, а уступка понадобится в момент принятия быстрых решений. В любви и дружбе у вас царит прекрасная атмосфера.","cp:libra:scorpio":"Мур, Весы и Скорпион звучат как завораживающий союз воздуха и воды. Звёзды подсказывают, что вам легко чувствовать глубину партнерства, а уступка нужна в умении сглаживать острые углы в спорах. Вместе вы умеете создавать крепкие и доверительные связи.","cp:libra:sagittarius":"Весы и Стрелец звучат как вдохновляющая история о свободе икрасоте. Небо говорит о том, что вам легко путешествовать и радоваться жизни вместе, а уступка пригодится в умении иногда сосредоточиться на рутине. В дружбе и любви вас ждет много радости.","cp:libra:capricorn":"Мур, Весы и Козерог звучат как элегантный союз легкости и основательности. Звёзды подсказывают, что вам легко ценить надежность друг друга, а уступка потребуется в вопросах темпа и организации отдыха. Вместе вы создаете гармонию во всем.","cp:libra:aquarius":"Весы и Водолей звучат как легкая и вдохновляющая мелодия воздуха. Небо говорит о том, что вам легко находить общий язык и общие интересы, а уступка нужна в проявлении бытового внимания. В любви и дружбе вас ждет прекрасное взаимопонимание.","cp:libra:pisces":"Весы и Рыбы звучат как мягкая мелодия, полная романтики и нежных разговоров. Легко находить общий язык в искусстве и мечтах, а уступка понадобится в принятии бытовых решений. В дружбе и любви вам уютно, если беречь личные границы каждого.","cp:scorpio:scorpio":"Скорпион и Скорпион звучат как мощный аккорд глубоких чувств и полной преданности. Легко понимать друг друга с полуслова в любых делах, а уступка нужна в стремлении контролировать всё вокруг. В любви и дружбе вам важно вовремя давать друг другу свободу.","cp:scorpio:sagittarius":"Скорпион и Стрелец звучат как яркий дуэт тайны и вечного поиска приключений. Легко вдохновлять друг друга на новые цели, а уступка пригодится в темпе движения вперед. В любви и дружбе вам помогает интерес к неизведанному.","cp:scorpio:capricorn":"Скорпион и Козерог в любви и дружбе звучат как глубокая и преданная симфония. Вам легко ставить общие цели и двигаться к ним, а уступка понадобится в умении вовремя смягчать принципы.","cp:scorpio:aquarius":"Скорпион и Водолей в любви и дружбе звучат как союз тайны и безграничного простора. Вам легко удивлять друг друга новыми идеями, а уступка понадобится в принятии потребности каждого побыть в тишине.","cp:scorpio:pisces":"Скорпион и Рыбы в любви и дружбе звучат как нежная водная стихия полной гармонии. Вам легко понимать друг друга без лишних слов, а уступка понадобится в возвращении из мира грёз в земные дела.","cp:sagittarius:sagittarius":"Стрелец и Стрелец в любви и дружбе звучат как яркий огонь вечного приключения. Вам легко затевать совместные поездки и радоваться жизни, а уступка понадобится в умении иногда слушать чужие планы.","cp:sagittarius:capricorn":"Стрелец и Козерог в любви и дружбе звучат как встреча вдохновения и мудрого расчёта. Вам легко учиться друг у друга новому опыту, а уступка понадобится в балансе между спонтанностью и порядком.","cp:sagittarius:aquarius":"Стрелец и Водолей в любви и дружбе звучат как ветер дальних странствий и открытий. Вам легко разделять любые увлечения и мечты, а уступка понадобится в простой бытовой стабильности.","cp:sagittarius:pisces":"Стрелец и Рыбы в любви и дружбе звучат как союз поиска смысла и глубоких чувств. Вам легко делиться философскими взглядами, а уступка понадобится в решении практических задач.","cp:capricorn:capricorn":"Козерог и Козерог в любви и дружбе звучат как надёжный монолит из общих ценностей. Вам легко строить планы на долгие годы вперед, а уступка понадобится в проявлении мягких эмоций.","cp:capricorn:aquarius":"Козерог и Водолей в любви и дружбе звучат как сочетание традиций и смелых перспектив. Вам легко уважать личные границы друг друга, а уступка понадобится в согласовании темпа жизни.","cp:capricorn:pisces":"Козерог и Рыбы в любви и дружбе звучат как заботливый причал для уставшего путника. Вам легко дарить друг другу душевное тепло, а уступка понадобится в преодолении излишней замкнутости.","cp:aquarius:aquarius":"Водолей и Водолей звучат как космическая симфония свободолюбивых идей и открытий. Легко разделять необычные хобби друг друга, а уступка важна для проявления земной заботы. В любви и дружбе вам интересно создавать совместное будущее.","cp:aquarius:pisces":"Водолей и Рыбы звучат как тихий вечерний разговор о будущем и вселенной. Легко плыть по течению вдохновения, а уступка требуется в решении практических задач. В дружбе и любви вам тепло вместе мечтать.","cp:pisces:pisces":"Рыбы и Рыбы звучат как волшебная сказка, полная эмпатии и тонких чувств. Легко угадывать настроения друг друга без слов, а уступка нужна для возвращения в реальный мир. В любви и дружбе вам важно сохранять опору."},"stores":[{"label":"RuStore","url":"https://www.rustore.ru/catalog/app/com.kotost.kotost_tarot"},{"label":"Google Play","url":"https://play.google.com/store/apps/details?id=com.kotost.kotost_tarot"}],"lang":"ru","sender":"pisces","base":"https://leks2000.github.io/kotost","prefix":"","t":{"kicker":"Тебя позвали в шатёр","kickerHome":"Kotost · таро и гороскоп","h1":"Знак друга: {sign}","h1Home":"Совместимость по знакам","say":"Выбери свой знак, и я посчитаю, как вы сходитесь в любви, дружбе, работе и общении.","sayHome":"Выбери два знака, и я посчитаю, как они сходятся в любви, дружбе, работе и общении.","friendSign":"Знак друга","partnerSign":"Знак партнёра","yourSign":"Твой знак","choose":"Выбрать","date":"Не помнишь знак? Дата рождения:","cta":"В приложении Kotost сравнит ваши натальные карты целиком, разложит таро на двоих и каждое утро пришлёт гороскоп.","ctaAfter":"Это только знаки. В Kotost можно сравнить натальные карты целиком: видно, где вы зажигаете друг друга, а где спорите.","download":"Скачать Kotost","invite":"Позвать своих друзей","shareText":"Я {sign}. Проверь, как мы сходимся по звёздам:","copied":"Ссылка скопирована","copy":"Скопируй ссылку:","pairTitle":"{a} и {b}","foot":"Kotost · таро и гороскоп. Расчёт идёт в браузере, дата никуда не отправляется."}};
+(function () {
+  const C = window.KotostCompat, T = D.t, $ = (id) => document.getElementById(id);
+  const VS = '︎'; // текстовый вид знака, не эмодзи
+  const sign = (id) => D.signs.find((s) => s.id === id);
+  const fmt = (s, o) => s.replace(/\{(\w+)\}/g, (_, k) => o[k]);
+  let a = D.sender, b = null, active = a ? 'B' : 'A';
+
+  $('kicker').textContent = a ? T.kicker : T.kickerHome;
+  $('h1').textContent = a ? fmt(T.h1, { sign: sign(a).name }) : T.h1Home;
+  $('say').textContent = a ? T.say : T.sayHome;
+  $('capA').textContent = a ? T.friendSign : T.partnerSign;
+  $('capB').textContent = T.yourSign;
+  $('dateLabel').textContent = T.date;
+  $('ctaText').textContent = T.cta;
+  $('store').textContent = T.download;
+  $('store').href = D.stores[0].url;
+  $('store2').textContent = D.stores[1].label;
+  $('store2').href = D.stores[1].url;
+  $('invite').textContent = T.invite;
+  $('foot').textContent = T.foot;
+  if (a) $('slotA').disabled = true;
+
+  for (const s of D.signs) {
+    const el = document.createElement('button');
+    el.type = 'button';
+    el.dataset.id = s.id;
+    el.innerHTML = '<span class="sym">' + s.glyph + VS + '</span>' + s.name;
+    el.addEventListener('click', () => choose(s.id));
+    $('grid').appendChild(el);
+  }
+  $('slotA').addEventListener('click', () => { if (!D.sender) { active = 'A'; paint(); } });
+  $('slotB').addEventListener('click', () => { active = 'B'; paint(); });
+  $('date').addEventListener('change', (e) => {
+    const v = e.target.value; // дата остаётся в браузере
+    if (!v) return;
+    const [, m, d] = v.split('-').map(Number);
+    choose(C.signOfDate(m, d));
+  });
+
+  function choose(id) {
+    if (active === 'A') { a = id; if (!b) active = 'B'; } else { b = id; if (!a) active = 'A'; }
+    paint();
+    if (a && b) render();
+  }
+
+  function slot(k, id) {
+    const badge = $('badge' + k), s = id && sign(id);
+    badge.className = 'badge sym' + (s ? '' : ' empty');
+    badge.textContent = s ? s.glyph + VS : '+';
+    $('nm' + k).textContent = s ? s.name : T.choose;
+    $('slot' + k).classList.toggle('active', active === k && !(a && b && D.sender));
+  }
+
+  function paint() {
+    slot('A', a);
+    slot('B', b);
+    const cur = active === 'A' ? a : b;
+    for (const el of $('grid').children) el.classList.toggle('on', el.dataset.id === cur);
+  }
+
+  function render() {
+    const r = C.compat(a, b), dist = D.dist[String(C.distance(a, b))];
+    const text = D.pieces[C.pieceKey(a, b)] || dist.text;
+    const box = $('result');
+    box.className = '';
+    box.innerHTML = '';
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = '<div class="who"></div><div class="total">' + r.total + '%</div><div class="title"></div><p class="text"></p>';
+    card.querySelector('.who').textContent = fmt(T.pairTitle, { a: sign(a).name, b: sign(b).name });
+    card.querySelector('.title').textContent = dist.title;
+    card.querySelector('.text').textContent = text;
+    for (const id of C.SPHERES) {
+      const bar = document.createElement('div');
+      bar.className = 'bar';
+      bar.innerHTML = '<div class="row"><span></span><b>' + r.spheres[id] + '%</b></div><div class="track"><div class="fill"></div></div><div class="line"></div>';
+      bar.querySelector('span').textContent = D.spheres[id];
+      bar.querySelector('.line').textContent = dist[id];
+      card.appendChild(bar);
+      requestAnimationFrame(() => requestAnimationFrame(() => { bar.querySelector('.fill').style.width = r.spheres[id] + '%'; }));
+    }
+    box.appendChild(card);
+    $('invite').classList.remove('hide');
+    $('ctaText').textContent = T.ctaAfter;
+    try { history.replaceState(null, '', location.pathname + '?with=' + b); } catch (e) {}
+    box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Позвать своих: ссылка на свой знак (тот, кого позвали, теперь сам зовёт).
+  $('invite').addEventListener('click', async () => {
+    const mine = D.sender ? b : (b || a);
+    const url = D.base + D.prefix + '/c/' + mine + '/';
+    const text = fmt(T.shareText, { sign: sign(mine).name });
+    try {
+      if (navigator.share) { await navigator.share({ text: text, url: url }); return; }
+    } catch (e) { if (e && e.name === 'AbortError') return; }
+    try { await navigator.clipboard.writeText(text + ' ' + url); toast(T.copied); } catch (e) { prompt(T.copy, url); }
+  });
+
+  function toast(s) {
+    const t = $('toast');
+    t.textContent = s;
+    t.classList.add('on');
+    setTimeout(() => t.classList.remove('on'), 2000);
+  }
+
+  // ?with=<знак> (вернулись по ссылке или обновили страницу): сразу показать пару.
+  const w = new URLSearchParams(location.search).get('with');
+  paint();
+  if (w && sign(w) && a) { active = 'B'; choose(w); }
+})();
+</script>
+</body>
+</html>

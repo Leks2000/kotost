@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gemini invites you to check your compatibility</title>
+<meta name="description" content="Pick your sign and I&#x27;ll work out how you two match in love, friendship, work and communication.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kotost">
+<meta property="og:title" content="Gemini invites you to check your compatibility">
+<meta property="og:description" content="Pick your sign and I&#x27;ll work out how you two match in love, friendship, work and communication.">
+<meta property="og:url" content="https://leks2000.github.io/kotost/en/c/gemini/">
+<meta property="og:image" content="https://leks2000.github.io/kotost/og/en/gemini.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1A0F1D">
+<link rel="icon" href="https://leks2000.github.io/kotost/kotost.png">
+<link rel="alternate" hreflang="ru" href="https://leks2000.github.io/kotost/c/gemini/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family: KSymbols; src: url('https://leks2000.github.io/kotost/KSymbols.ttf') format('truetype'); font-display: block; }
+:root {
+  --bg: #1A0F1D; --surface: #2B1B30; --surface-hi: #3A2540; --night: #221E40; --border: #4A3350;
+  --text: #F7EDE6; --soft: #DCC9D6; --muted: #BCA5B8; --gold: #E8C27A; --gold-light: #F6E2A8; --on-cta: #2A1530;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse 120% 60% at 50% -10%, #3a1f45 0%, transparent 60%),
+    radial-gradient(1.5px 1.5px at 12% 22%, #f6e2a855 50%, transparent 51%),
+    radial-gradient(1px 1px at 78% 14%, #f6e2a866 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 88% 46%, #f6e2a844 50%, transparent 51%),
+    radial-gradient(1px 1px at 22% 64%, #f6e2a855 50%, transparent 51%),
+    radial-gradient(1px 1px at 64% 82%, #f6e2a844 50%, transparent 51%);
+  background-attachment: fixed;
+  color: var(--text);
+  font: 400 16px/1.5 Inter, system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+.valance { display: block; width: 100%; height: 34px; }
+.wrap { max-width: 460px; margin: 0 auto; padding: 4px 16px 40px; }
+.top { display: flex; align-items: center; justify-content: space-between; margin: 6px 0 18px; }
+.brand { font: 600 15px Unbounded, sans-serif; letter-spacing: .14em; color: var(--gold); text-decoration: none; }
+.lang { color: var(--muted); font-size: 13px; text-decoration: none; border: 1px solid var(--border); border-radius: 99px; padding: 4px 12px; }
+.kicker { text-align: center; color: var(--muted); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 6px; }
+h1 { font: 600 24px/1.25 Unbounded, sans-serif; text-align: center; margin: 0 0 18px; text-wrap: balance; }
+.sym { font-family: KSymbols, Inter, sans-serif; }
+.bubble { display: flex; gap: 12px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 12px 14px; margin-bottom: 20px; }
+.bubble img { width: 52px; height: 52px; border-radius: 50%; flex: none; border: 1px solid #e8c27a99; }
+.bubble p { margin: 0; color: var(--soft); font-size: 15px; }
+.pair { display: flex; align-items: flex-start; justify-content: space-evenly; margin-bottom: 14px; }
+.slot { background: none; border: 0; padding: 0; color: inherit; font: inherit; display: flex; flex-direction: column; align-items: center; gap: 6px; width: 120px; cursor: pointer; }
+.slot[disabled] { cursor: default; }
+.badge { width: 76px; height: 76px; border-radius: 50%; display: grid; place-items: center; background: var(--night); border: 1px solid #e8c27ab3; color: var(--gold-light); font-size: 38px; transition: transform .25s, box-shadow .25s; }
+.badge.empty { background: none; border-color: #e8c27a99; color: var(--gold); font: 300 34px Inter, sans-serif; }
+.slot.active .badge { box-shadow: 0 0 0 3px #e8c27a33, 0 0 24px #e8c27a40; }
+.slot .cap { font-size: 12px; color: var(--muted); }
+.slot .nm { font-weight: 700; font-size: 15px; }
+.heart { color: var(--gold); font-size: 26px; margin-top: 22px; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 6px 0 12px; }
+.grid button { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; color: var(--text); padding: 10px 2px 8px; font: 500 12px Inter, sans-serif; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; transition: border-color .2s, background .2s; }
+.grid button .sym { font-size: 22px; color: var(--gold-light); }
+.grid button:hover, .grid button.on { border-color: var(--gold); background: var(--surface-hi); }
+.date { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--muted); font-size: 13px; margin-bottom: 22px; flex-wrap: wrap; }
+.date input { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 10px; padding: 6px 10px; font: inherit; color-scheme: dark; }
+.card { background: var(--surface); border: 1px solid #e8c27a66; border-radius: 20px; padding: 18px 16px; animation: up .5s ease both; }
+@keyframes up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.total { font: 600 52px/1 Unbounded, sans-serif; color: var(--gold); text-align: center; margin: 4px 0 6px; }
+.who { text-align: center; color: var(--muted); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.title { font: 600 17px Unbounded, sans-serif; text-align: center; margin-bottom: 12px; }
+.text { margin: 0 0 14px; font-size: 15px; }
+.bar { margin-top: 12px; }
+.bar .row { display: flex; justify-content: space-between; font-weight: 700; font-size: 14px; }
+.bar .row b { color: var(--gold); }
+.track { height: 6px; border-radius: 99px; background: #ffffff14; margin: 5px 0 4px; overflow: hidden; }
+.fill { height: 100%; width: 0; border-radius: 99px; background: linear-gradient(90deg, #b8894a, var(--gold-light)); transition: width .9s cubic-bezier(.2,.8,.2,1); }
+.bar .line { color: var(--muted); font-size: 13px; }
+.cta { margin-top: 18px; text-align: center; }
+.cta p { color: var(--soft); font-size: 14px; margin: 0 0 12px; }
+.btn { display: block; width: 100%; border-radius: 99px; padding: 15px 18px; font: 600 15px Unbounded, sans-serif; text-decoration: none; text-align: center; cursor: pointer; border: 0; }
+.btn.main { background: var(--gold); color: var(--on-cta); box-shadow: 0 6px 24px #e8c27a33; }
+.btn.line { background: none; color: var(--gold); border: 1px solid #e8c27a99; margin-top: 10px; font-size: 14px; padding: 13px 18px; }
+.alt { display: inline-block; margin-top: 10px; color: var(--muted); font-size: 13px; }
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--surface-hi); border: 1px solid var(--border); padding: 10px 16px; border-radius: 99px; font-size: 14px; opacity: 0; transition: opacity .3s; pointer-events: none; }
+.toast.on { opacity: 1; }
+footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 28px; }
+.hide { display: none !important; }
+@media (prefers-reduced-motion: reduce) { .card { animation: none; } .fill, .badge { transition: none; } }
+</style>
+</head>
+<body>
+<svg class="valance" viewBox="0 0 400 34" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0H400V14Q387.5 34 375 14Q362.5 34 350 14Q337.5 34 325 14Q312.5 34 300 14Q287.5 34 275 14Q262.5 34 250 14Q237.5 34 225 14Q212.5 34 200 14Q187.5 34 175 14Q162.5 34 150 14Q137.5 34 125 14Q112.5 34 100 14Q87.5 34 75 14Q62.5 34 50 14Q37.5 34 25 14Q12.5 34 0 14Z" fill="#2B1B30" stroke="#E8C27A" stroke-opacity=".55" stroke-width="1"/>
+</svg>
+<div class="wrap">
+  <div class="top">
+    <a class="brand" href="https://leks2000.github.io/kotost/en/">KOTOST</a>
+    <a class="lang" href="https://leks2000.github.io/kotost/c/gemini/" hreflang="ru">Русский</a>
+  </div>
+  <p class="kicker" id="kicker"></p>
+  <h1 id="h1"></h1>
+  <div class="bubble"><img src="https://leks2000.github.io/kotost/kotost.png" alt="Kotost" width="52" height="52"><p id="say"></p></div>
+
+  <div class="pair">
+    <button class="slot" id="slotA" type="button"><span class="badge sym" id="badgeA"></span><span class="cap" id="capA"></span><span class="nm" id="nmA"></span></button>
+    <svg class="heart" aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-9.2-9.2C1.6 7.5 3.7 4.5 7 4.5c2 0 3.3 1.1 5 3 1.7-1.9 3-3 5-3 3.3 0 5.4 3 4.2 6.3C19.5 15.4 12 20 12 20z"/></svg>
+    <button class="slot" id="slotB" type="button"><span class="badge sym" id="badgeB"></span><span class="cap" id="capB"></span><span class="nm" id="nmB"></span></button>
+  </div>
+  <div class="grid" id="grid" role="group"></div>
+  <label class="date" id="dateRow"><span id="dateLabel"></span><input type="date" id="date" min="1900-01-01" max="2100-12-31"></label>
+
+  <section id="result" class="hide" aria-live="polite"></section>
+
+  <div class="cta" id="cta">
+    <p id="ctaText"></p>
+    <a class="btn main" id="store" href="#" rel="noopener"></a>
+    <a class="alt" id="store2" href="#" rel="noopener"></a>
+    <button class="btn line hide" id="invite" type="button"></button>
+  </div>
+  <footer id="foot"></footer>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+// Совместимость по знакам: порт app/lib/astro/compat.dart (signCompat). Менять только вместе с Dart:
+// тест app/test/compat_web_test.dart сверяет 144 пары с выводом этого файла (share_site/test_compat.js).
+(function (root) {
+  const SIGNS = ['aries', 'taurus', 'gemini', 'cancer', 'leo', 'virgo',
+    'libra', 'scorpio', 'sagittarius', 'capricorn', 'aquarius', 'pisces'];
+  const SPHERES = ['love', 'friend', 'work', 'talk'];
+  // База по расстоянию между знаками (любовь, дружба, работа, общение).
+  const BASE = [
+    [78, 85, 70, 88], // один знак
+    [62, 68, 74, 60], // соседи
+    [84, 90, 80, 92], // секстиль
+    [58, 55, 66, 52], // квадрат
+    [92, 88, 78, 86], // трин
+    [60, 58, 64, 56], // через пять знаков
+    [80, 64, 60, 70], // оппозиция
+  ];
+
+  function idx(s) {
+    const i = SIGNS.indexOf(s);
+    if (i < 0) throw new Error('unknown sign ' + s);
+    return i;
+  }
+
+  // 0..6, как signDistance в Dart (там % всегда неотрицательный).
+  function distance(a, b) {
+    const d = (((idx(b) - idx(a)) % 12) + 12) % 12;
+    return d > 6 ? 12 - d : d;
+  }
+
+  function compat(a, b) {
+    const ia = idx(a), ib = idx(b);
+    const row = BASE[distance(a, b)];
+    const spheres = {};
+    let sum = 0;
+    for (let i = 0; i < SPHERES.length; i++) {
+      const wiggle = (((ia + ib) * 7 + ia * ib + i * 5) % 9) - 4;
+      const v = Math.min(97, Math.max(40, row[i] + wiggle));
+      spheres[SPHERES[i]] = v;
+      sum += v;
+    }
+    // Dart round(): от нуля на .5, для положительных то же, что Math.round.
+    return { total: Math.round(sum / SPHERES.length), spheres };
+  }
+
+  // Ключ текста пары в общем кэше ИИ: cp:<знак>:<знак> по порядку зодиака.
+  function pieceKey(a, b) {
+    return idx(a) <= idx(b) ? 'cp:' + a + ':' + b : 'cp:' + b + ':' + a;
+  }
+
+  // Знак по дате (тропический, границы по средним датам; на стыке знаков точнее в приложении).
+  const STARTS = [[3, 21], [4, 20], [5, 21], [6, 21], [7, 23], [8, 23], [9, 23], [10, 23], [11, 22], [12, 22], [1, 20], [2, 19]];
+  function signOfDate(month, day) {
+    for (let i = 11; i >= 0; i--) {
+      const j = (i + 1) % 12;
+      const [m0, d0] = STARTS[i];
+      const [m1, d1] = STARTS[j];
+      const after = month > m0 || (month === m0 && day >= d0);
+      const before = month < m1 || (month === m1 && day < d1);
+      if (m0 < m1 ? after && before : after || before) return SIGNS[i];
+    }
+    return SIGNS[0];
+  }
+
+  const api = { SIGNS, SPHERES, distance, compat, pieceKey, signOfDate };
+  if (typeof module !== 'undefined' && module.exports) module.exports = api;
+  else root.KotostCompat = api;
+})(this);
+
+</script>
+<script>
+const D = {"signs":[{"id":"aries","name":"Aries","glyph":"♈"},{"id":"taurus","name":"Taurus","glyph":"♉"},{"id":"gemini","name":"Gemini","glyph":"♊"},{"id":"cancer","name":"Cancer","glyph":"♋"},{"id":"leo","name":"Leo","glyph":"♌"},{"id":"virgo","name":"Virgo","glyph":"♍"},{"id":"libra","name":"Libra","glyph":"♎"},{"id":"scorpio","name":"Scorpio","glyph":"♏"},{"id":"sagittarius","name":"Sagittarius","glyph":"♐"},{"id":"capricorn","name":"Capricorn","glyph":"♑"},{"id":"aquarius","name":"Aquarius","glyph":"♒"},{"id":"pisces","name":"Pisces","glyph":"♓"}],"spheres":{"love":"Love","friend":"Friendship","work":"Work","talk":"Communication"},"dist":{"0":{"title":"Mirror","text":"You're alike, like reflections: you understand each other with half a word. The one difficulty: the same weak spots, and nobody wants to give way.","love":"easy, but needs more novelty","friend":"the same jokes and the same interests","work":"strong in the same things, weak in the same things","talk":"you understand each other without words"},"1":{"title":"Neighbors","text":"You're very different, even though you sit side by side on the zodiac wheel. Each sees in the other what they lack, and that's worth learning from.","love":"attraction through difference","friend":"takes time to get used to each other","work":"you complement each other well","talk":"you speak different languages"},"2":{"title":"Allies","text":"An easy, friendly pair. You recharge each other and quickly find something to do together.","love":"warm and full of interest","friend":"one of the best pairs for friendship","work":"ideas and action together","talk":"endless conversations"},"3":{"title":"Sparks","text":"There's tension between you, and it's also what moves you. There will be plenty of arguments, but plenty of growth too, if you learn to listen.","love":"passion and arguments side by side","friend":"friendship through respect","work":"clear roles are needed","talk":"you need to put agreements into words"},"4":{"title":"Same element","text":"You share an element, and it feels calm together. You understand each other's rhythm and easily build something shared.","love":"one of the most harmonious pairs","friend":"easy and long-lasting","work":"steady, without jolts","talk":"you understand what matters to the other"},"5":{"title":"Different worlds","text":"It's not easy for you to follow each other's logic. The pair holds together on curiosity and a willingness to adjust.","love":"mutual flexibility is needed","friend":"grows slowly","work":"better on separate tasks","talk":"say your expectations out loud"},"6":{"title":"Magnets","text":"Opposites attract. You see your other half in each other, but there will be some tug-of-war too.","love":"strong attraction","friend":"from arguments to respect","work":"two sides of one task","talk":"look for the middle ground"}},"pieces":{"cp:aries:aries":"Together you share a bright spark that lights up every adventure, and your mutual courage makes starting new things feel natural. The stars hint that you may both want to lead, so finding moments to listen can keep the fire warm.","cp:aries:taurus":"Together you blend quick initiative with steady patience, creating a rhythm where ideas can grow roots. The sky speaks of a need to honor each other's pace, so compromise arrives when you let spontaneity meet reliability.","cp:aries:gemini":"Together you sound like a lively melody of quick ideas and bold steps, where friendship and love share a bright, adventurous rhythm. It is easy for you to inspire each other with endless curiosity and spontaneous plans. A compromise is needed when you both rush forward, so remember to slow down and listen to one another.","cp:aries:cancer":"Together you sound like a warm fire and a deep hearth, blending fierce passion with tender care in both love and friendship. It is easy for you to offer strong loyalty and create a safe space to share your dreams. A compromise is needed when bold action meets a need for quiet reflection, so be gentle with your different paces.","cp:aries:leo":"Together you sound like a radiant spark meeting a steady flame, creating a vibrant duet of courage and warmth in love and friendship. It is easy for you to share excitement, laughter, and a natural zest for life. A compromise is needed when both of you want to lead, so take turns holding the spotlight.","cp:aries:virgo":"Together you bring together fiery energy and careful planning, creating a balanced rhythm in love and friendship. It is easy for you to achieve shared goals through your combined drive and attention to detail. A compromise is needed when your fast pace meets a desire for caution and routine.","cp:aries:libra":"Together you blend bold action with a love for harmony, making a vibrant and charming pair. It is easy for you to enjoy lively conversations and inspire each other in social settings. A compromise is needed when you want to rush a decision while your partner prefers to weigh every option.","cp:aries:scorpio":"Together you share an intense and passionate connection full of deep emotions. It is easy for you to commit fully to your bond and face challenges with courage. A compromise is needed when your impulsive words meet a need for quiet reflection and privacy.","cp:aries:sagittarius":"Together you form an adventurous and enthusiastic duo that loves exploring new horizons. It is easy for you to laugh together and keep your friendship or romance exciting and dynamic. A compromise is needed when you both want to lead and need to take turns guiding the way.","cp:aries:capricorn":"Together you combine ambition with determination to build lasting successes. It is easy for you to respect each other's strong work ethic and drive. A compromise is needed when your spontaneous urges meet a preference for structured plans.","cp:aries:aquarius":"Together you spark bright ideas and enjoy a friendship full of freedom and original thoughts. It is easy for you to support each other's unique dreams and personal space. A compromise is needed when your need for immediate action meets a preference for detached analysis.","cp:aries:pisces":"Together you merge fiery courage with gentle imagination, creating a deeply touching bond. It is easy for you to offer mutual support and inspire creativity in one another. A compromise is needed when your direct style meets a need for softer emotional phrasing.","cp:taurus:taurus":"Together you share a grounded and comforting connection built on loyalty and a love for stability. It is easy for you to enjoy quiet moments and create a secure environment together. A compromise is needed when you both dig your heels in and refuse to change your minds.","cp:taurus:gemini":"Together you mix steady patience with lively curiosity, bringing diverse perspectives to your relationship. It is easy for you to balance practical comfort with fun new ideas. A compromise is needed when your desire for routine meets a constant craving for change.","cp:taurus:cancer":"Together you create a warm and nurturing haven filled with deep emotional understanding. It is easy for you to offer unwavering loyalty and care to each other. A compromise is needed when stubbornness arises and you both wait for the other to apologize first.","cp:taurus:leo":"Together you sound like a sturdy oak tree warmed by a bright sun, bringing steady devotion and grand romance to your bond. It is easy for you to build comfort, loyalty, and a joyful shared life. A compromise is needed when stubborn habits clash, so practice patience and soft listening.","cp:taurus:virgo":"Together you sound like a quiet garden tended with great care, where love and friendship grow through reliable acts of kindness. It is easy for you to find peace in simple routines and practical support. A compromise is needed when perfectionism meets resistance to change, so offer each other grace.","cp:taurus:libra":"Together you sound like soft music and beautiful art, sharing a love for harmony, comfort, and sweet companionship. It is easy for you to create a peaceful atmosphere and enjoy life's gentle pleasures together. A compromise is needed when making decisions, as you both might prefer to wait for the other to take the first step.","cp:taurus:scorpio":"Together you sound like a deep river flowing through fertile valleys, building a bond of profound loyalty and emotional depth. It is easy for you to trust each other completely and offer unwavering support. A compromise is needed when strong wills meet, so use gentle words to bridge your feelings.","cp:taurus:sagittarius":"Together you sound like a cozy home base welcoming a curious traveler, balancing a love for comfort with a desire for new horizons. It is easy for you to share good food, honest talks, and steady companionship. A compromise is needed when one wants to stay still and the other wants to roam, so plan both quiet days and little adventures.","cp:taurus:capricorn":"Together you build a calm and steady world in love and friendship. It is easy for you to share practical goals and cozy evenings. A compromise is needed when routine starts to feel a bit too heavy, so you should remember to add some spontaneous joy.","cp:taurus:aquarius":"Together you blend grounded earthy warmth with bright ideas in love and friendship. It is easy for you to appreciate each other and share quiet moments. A compromise is needed because you sometimes see the future from very different angles, requiring patience from both of you.","cp:taurus:pisces":"Together you create a deeply soothing and gentle harmony in love and friendship. It is easy for you to offer quiet support and understand each other without words. A compromise is needed when you need to step out of your cozy dreams and handle practical details together.","cp:gemini:gemini":"Together you spark endless curiosity and lively chats in love and friendship. It is easy for you to share new ideas and keep boredom far away. A compromise is needed when you both need to slow down and focus on one thing at a time instead of scattering your energy.","cp:gemini:cancer":"Together you bring a sweet mix of lively chatter and tender care to love and friendship. It is easy for you to share stories and create a safe space. A compromise is needed because one of you prefers to fly away on new winds while the other seeks a cozy shell.","cp:gemini:leo":"Together you shine with bright energy and playful fun in love and friendship. It is easy for you to inspire each other and enjoy social gatherings. A compromise is needed when you both want to take the spotlight, so you should remember to share the stage.","cp:gemini:virgo":"Together you notice the little details that make love and friendship special. It is easy for you to talk for hours and share clever insights. A compromise is needed when overthinking creeps in, so you should take a deep breath and keep things light.","cp:gemini:libra":"Together you create a graceful and harmonious atmosphere in love and friendship. It is easy for you to enjoy beauty and pleasant conversations. A compromise is needed when a decision must be made, as you might both wait for the other to take the lead.","cp:gemini:scorpio":"Together you explore fascinating depths behind a lively surface in love and friendship. It is easy for you to stay intrigued by each other's complex minds. A compromise is needed because one of you shares everything instantly while the other keeps secrets close.","cp:gemini:sagittarius":"Together you embark on wonderful adventures of the mind in love and friendship. It is easy for you to laugh and dream about distant horizons. A compromise is needed when the time comes to handle everyday matters instead of just chasing the next big idea.","cp:gemini:capricorn":"Together you sound like a curious melody meeting a steady rhythm, blending quick thoughts with practical steps. It is easy for you to share interesting stories, while a compromise is needed when balancing spontaneity and careful planning.","cp:gemini:aquarius":"Together you sound like a lively breeze and an open sky, creating a joyful space of shared ideas and endless curiosity. It is easy for you to inspire each other, while a compromise is needed when you want to ground your floating plans into something steady.","cp:gemini:pisces":"Together you weave a creative bridge between airy curiosity and watery dreams. It is easy for you to share endless stories, while a compromise is needed when handling practical daily details. You find harmony through gentle listening and genuine wonder.","cp:cancer:cancer":"Together you build a cozy sanctuary of deep emotional understanding. It is easy for you to create safety and warmth, while a compromise is needed to gently venture outside your shared shell. You find harmony through quiet loyalty and mutual care.","cp:cancer:leo":"Together you blend tender emotional warmth with bright dramatic flair. It is easy for you to appreciate loyalty and affection, while a compromise is needed when balancing quiet moods with a desire for the spotlight. You find harmony through generous hearts.","cp:cancer:virgo":"Together you create a deeply cozy and supportive space where warmth meets practical care. You easily understand each other through quiet gestures, though you might need a little extra patience when you, Cancer, lean into your moods while you, Virgo, prefer to analyze every detail.","cp:cancer:libra":"Together you weave a gentle melody of emotional depth and aesthetic grace, finding natural harmony in quiet evenings at home. You share a love for beauty and comfort, yet you may sometimes need to find a middle ground between your desire for quiet cocooning and your need for social connection.","cp:cancer:scorpio":"Together you form an intuitive and fiercely loyal bond where feelings run exceptionally deep. You connect effortlessly on a soul level, but you both might need to compromise when your emotional waves meet stubborn intensity.","cp:cancer:sagittarius":"Together you blend cozy emotional depth with a bright spark of adventure, bringing a lovely balance to your days. You find ease in sharing heartfelt talks, while a little compromise helps when your wish for quiet downtime meets a sudden urge to explore.","cp:cancer:capricorn":"Together you build a sturdy and nurturing foundation based on mutual dedication and quiet understanding. You fit together naturally in your shared goals, but you might need to adjust your pace when your sensitivity meets a strictly practical approach.","cp:cancer:aquarius":"Together you explore a fascinating contrast between cozy emotional warmth and inventive freedom. You connect easily through shared curiosity, though you may need to compromise when your need for constant closeness meets a desire for personal space.","cp:cancer:pisces":"Together you drift in a dreamy and deeply empathetic world where words are hardly needed. You flow together with wonderful ease, yet you might need to ground yourselves when both of you tend to float away from daily practicalities.","cp:leo:leo":"Together you shine like the brightest stars in love and friendship, bringing warmth and joy to every moment. It is easy for you to share big dreams and inspire each other, but a compromise is needed when you both want to lead at the same time.","cp:leo:virgo":"Together you shine with a wonderful blend of bright warmth and thoughtful organization. You easily appreciate each other's strengths, though a gentle compromise helps when your desire for the spotlight meets a preference for quiet modesty.","cp:leo:libra":"Together you create a charming and vibrant atmosphere filled with art, romance, and joyful gatherings. You connect effortlessly through your love for beauty, while a little patience is helpful when making shared decisions together.","cp:leo:scorpio":"Together you radiate a powerful and magnetic energy that turns every shared moment into something special. You match each other in passion and loyalty, though you may need to balance your bold expression with a more private, cautious nature.","cp:leo:sagittarius":"Together you spark a vibrant flame of adventure and optimism. It is easy for you to inspire each other with grand visions, while a compromise is needed to ground your shared enthusiasm in reality. You find harmony through joyful laughter and bold explorations.","cp:leo:capricorn":"Together you unite a bright radiating presence with steady practical strength. It is easy for you to respect each other's ambitions, while a compromise is needed between seeking applause and valuing quiet persistence. You find harmony through mutual admiration.","cp:leo:aquarius":"Together you create a fascinating blend of warm charisma and inventive ideas. It is easy for you to enjoy lively social moments, while a compromise is needed to balance personal recognition with group ideals. You find harmony through celebrating each other's unique spark.","cp:leo:pisces":"Together you mix theatrical warmth with gentle imaginative sensitivity. It is easy for you to dream up beautiful artistic shared worlds, while a compromise is needed when reality requires strict boundaries. You find harmony through tender affection.","cp:virgo:virgo":"Together you form a thoughtful partnership of careful planning and quiet devotion. It is easy for you to understand each other's need for order, while a compromise is needed to soften perfectionist tendencies. You find harmony through small acts of daily kindness.","cp:virgo:libra":"Together you pair analytical grace with a refined sense of balance. It is easy for you to appreciate polite communication and beauty, while a compromise is needed when overthinking meets indecision. You find harmony through gentle cooperation.","cp:virgo:scorpio":"Together you build a bond of quiet loyalty and deep observant insight. It is easy for you to trust each other completely in subtle ways, while a compromise is needed to balance analytical habits with intense feelings. You find harmony through sincere truth.","cp:virgo:sagittarius":"Together you sound like a neat path leading toward a vast horizon, uniting thoughtful details with big dreams. It is easy for you to learn from one another, while a compromise is needed when blending a love for routines with a desire to wander.","cp:virgo:capricorn":"Together you sound like a solid foundation built with care, combining gentle organization with quiet strength. It is easy for you to understand each other without many words, while a compromise is needed when you both hold strong views on how things should be done.","cp:virgo:aquarius":"Together you sound like a clever blueprint meeting a futuristic spark, offering a unique blend of logic and originality. It is easy for you to talk about fascinating topics for hours, while a compromise is needed when meeting practical tasks with unconventional methods.","cp:virgo:pisces":"Together you sound like a quiet stream watering a gentle garden, pairing helpful thoughts with deep feelings. It is easy for you to show kindness and care to each other, while a compromise is needed when balancing gentle daydreams with everyday chores.","cp:libra:libra":"Together you sound like a graceful dance of matching steps, creating a harmonious and pleasant atmosphere. It is easy for you to share beauty and balance in love and friendship, while a compromise is needed when you both prefer to wait for someone else to make a choice.","cp:libra:scorpio":"Together you sound like a calm surface hiding deep and fascinating waters, bringing charm and intensity side by side. It is easy for you to appreciate art and meaningful talks, while a compromise is needed when matching a light approach with deep feelings.","cp:libra:sagittarius":"Together you sound like a sunny morning walk filled with friendly smiles and bright horizons. It is easy for you to enjoy social gatherings and fun adventures together, while a compromise is needed when making long-term plans in a relaxed way.","cp:libra:capricorn":"Together you blend gentle grace with steady dedication, creating a balanced rhythm in both love and friendship. You find it easy to appreciate each other, while a compromise is needed when balancing your social moments with quiet focus.","cp:libra:aquarius":"Together you share a breezy and creative connection, filled with inspiring talks and lighthearted moments. You find it easy to connect over shared ideals, while a compromise is needed to keep your everyday plans grounded.","cp:libra:pisces":"Together you create a soft and dreamy atmosphere, where kindness and imagination guide your steps. You find it easy to understand each other deeply, while a compromise is needed to navigate practical daily tasks smoothly.","cp:scorpio:scorpio":"Together you build a profound and loyal bond, sharing quiet loyalty and deep emotional warmth. You find it easy to trust one another completely, while a compromise is needed to let in a bit of fresh air and ease.","cp:scorpio:sagittarius":"Together you spark an exciting mix of passionate depth and adventurous spirit. You find it easy to explore new ideas side by side, while a compromise is needed to balance your love for home with the call of the open road.","cp:scorpio:capricorn":"Together you create a deeply loyal bond in love and friendship. It is easy for you to share quiet moments and big ambitions. A compromise is needed when you both refuse to show your vulnerable sides.","cp:scorpio:aquarius":"Together you bring intense depth and bright curiosity to your connection. It is easy for you to explore unusual ideas and fascinating topics. A compromise is needed because one of you craves steady routine while the other seeks sudden change.","cp:scorpio:pisces":"Together you share a profoundly emotional and intuitive understanding. It is easy for you to connect without needing many words. A compromise is needed so you do not get lost in a shared wave of heavy moods.","cp:sagittarius:sagittarius":"Together you spark a bright fire of endless adventure and laughter. It is easy for you to plan the next exciting journey or new discovery. A compromise is needed when daily chores call and neither of you wants to slow down.","cp:sagittarius:capricorn":"Together you combine bold vision with steady determination. It is easy for you to learn from each other and build a fun path forward. A compromise is needed because one loves spontaneous detours while the other prefers a clear plan.","cp:sagittarius:aquarius":"Together you enjoy a breezy and inspiring connection full of freedom. It is easy for you to talk about the future and share friendly ideals. A compromise is needed when emotional closeness is required instead of just grand theories.","cp:sagittarius:pisces":"Together you blend optimistic dreams with a gentle imagination. It is easy for you to inspire each other to see the brighter side of life. A compromise is needed to keep your feet on the ground when practical matters demand attention.","cp:capricorn:capricorn":"Together you build a remarkably stable and trustworthy foundation. It is easy for you to understand each other's strong work ethic and need for security. A compromise is needed to let more playful lightness into your shared days.","cp:capricorn:aquarius":"Together you join practical wisdom with clever innovation. It is easy for you to respect each other's unique perspective and personal space. A compromise is needed because one values traditional ways while the other invents the future.","cp:capricorn:pisces":"Together you balance gentle sensitivity with calm strength. It is easy for you to offer each other a safe harbor from the busy world. A compromise is needed so steady realism does not overshadow tender dreams.","cp:aquarius:aquarius":"Together you form a friendly and inventive partnership, always looking toward the horizon with bright ideas. You find it easy to give each other freedom, while a compromise is needed to nurture your closer emotional ties.","cp:aquarius:pisces":"Together you weave a gentle and imaginative story, blending bright thoughts with quiet empathy. You find it easy to dream together, while a compromise is needed to turn those lovely visions into steady steps.","cp:pisces:pisces":"Together you share a tender and intuitive connection, flowing through life with great compassion. You find it easy to offer each other safe harbor, while a compromise is needed to stay anchored in the daily routine."},"stores":[{"label":"Google Play","url":"https://play.google.com/store/apps/details?id=com.kotost.kotost_tarot"},{"label":"RuStore","url":"https://www.rustore.ru/catalog/app/com.kotost.kotost_tarot"}],"lang":"en","sender":"gemini","base":"https://leks2000.github.io/kotost","prefix":"/en","t":{"kicker":"You're invited to the tent","kickerHome":"Kotost · tarot & horoscope","h1":"Your friend is {sign}","h1Home":"Zodiac compatibility","say":"Pick your sign and I'll work out how you two match in love, friendship, work and communication.","sayHome":"Pick two signs and I'll work out how they match in love, friendship, work and communication.","friendSign":"Friend's sign","partnerSign":"Partner's sign","yourSign":"Your sign","choose":"Choose","date":"Not sure of your sign? Birthday:","cta":"In the Kotost app you can compare full birth charts, pull tarot for two and get a horoscope every morning.","ctaAfter":"That's just the signs. Kotost compares full birth charts too: where you light each other up and where you clash.","download":"Get Kotost","invite":"Invite your friends","shareText":"I'm {sign}. See how our stars match:","copied":"Link copied","copy":"Copy the link:","pairTitle":"{a} & {b}","foot":"Kotost · tarot & horoscope. Everything is calculated in your browser, your birthday goes nowhere."}};
+(function () {
+  const C = window.KotostCompat, T = D.t, $ = (id) => document.getElementById(id);
+  const VS = '︎'; // текстовый вид знака, не эмодзи
+  const sign = (id) => D.signs.find((s) => s.id === id);
+  const fmt = (s, o) => s.replace(/\{(\w+)\}/g, (_, k) => o[k]);
+  let a = D.sender, b = null, active = a ? 'B' : 'A';
+
+  $('kicker').textContent = a ? T.kicker : T.kickerHome;
+  $('h1').textContent = a ? fmt(T.h1, { sign: sign(a).name }) : T.h1Home;
+  $('say').textContent = a ? T.say : T.sayHome;
+  $('capA').textContent = a ? T.friendSign : T.partnerSign;
+  $('capB').textContent = T.yourSign;
+  $('dateLabel').textContent = T.date;
+  $('ctaText').textContent = T.cta;
+  $('store').textContent = T.download;
+  $('store').href = D.stores[0].url;
+  $('store2').textContent = D.stores[1].label;
+  $('store2').href = D.stores[1].url;
+  $('invite').textContent = T.invite;
+  $('foot').textContent = T.foot;
+  if (a) $('slotA').disabled = true;
+
+  for (const s of D.signs) {
+    const el = document.createElement('button');
+    el.type = 'button';
+    el.dataset.id = s.id;
+    el.innerHTML = '<span class="sym">' + s.glyph + VS + '</span>' + s.name;
+    el.addEventListener('click', () => choose(s.id));
+    $('grid').appendChild(el);
+  }
+  $('slotA').addEventListener('click', () => { if (!D.sender) { active = 'A'; paint(); } });
+  $('slotB').addEventListener('click', () => { active = 'B'; paint(); });
+  $('date').addEventListener('change', (e) => {
+    const v = e.target.value; // дата остаётся в браузере
+    if (!v) return;
+    const [, m, d] = v.split('-').map(Number);
+    choose(C.signOfDate(m, d));
+  });
+
+  function choose(id) {
+    if (active === 'A') { a = id; if (!b) active = 'B'; } else { b = id; if (!a) active = 'A'; }
+    paint();
+    if (a && b) render();
+  }
+
+  function slot(k, id) {
+    const badge = $('badge' + k), s = id && sign(id);
+    badge.className = 'badge sym' + (s ? '' : ' empty');
+    badge.textContent = s ? s.glyph + VS : '+';
+    $('nm' + k).textContent = s ? s.name : T.choose;
+    $('slot' + k).classList.toggle('active', active === k && !(a && b && D.sender));
+  }
+
+  function paint() {
+    slot('A', a);
+    slot('B', b);
+    const cur = active === 'A' ? a : b;
+    for (const el of $('grid').children) el.classList.toggle('on', el.dataset.id === cur);
+  }
+
+  function render() {
+    const r = C.compat(a, b), dist = D.dist[String(C.distance(a, b))];
+    const text = D.pieces[C.pieceKey(a, b)] || dist.text;
+    const box = $('result');
+    box.className = '';
+    box.innerHTML = '';
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = '<div class="who"></div><div class="total">' + r.total + '%</div><div class="title"></div><p class="text"></p>';
+    card.querySelector('.who').textContent = fmt(T.pairTitle, { a: sign(a).name, b: sign(b).name });
+    card.querySelector('.title').textContent = dist.title;
+    card.querySelector('.text').textContent = text;
+    for (const id of C.SPHERES) {
+      const bar = document.createElement('div');
+      bar.className = 'bar';
+      bar.innerHTML = '<div class="row"><span></span><b>' + r.spheres[id] + '%</b></div><div class="track"><div class="fill"></div></div><div class="line"></div>';
+      bar.querySelector('span').textContent = D.spheres[id];
+      bar.querySelector('.line').textContent = dist[id];
+      card.appendChild(bar);
+      requestAnimationFrame(() => requestAnimationFrame(() => { bar.querySelector('.fill').style.width = r.spheres[id] + '%'; }));
+    }
+    box.appendChild(card);
+    $('invite').classList.remove('hide');
+    $('ctaText').textContent = T.ctaAfter;
+    try { history.replaceState(null, '', location.pathname + '?with=' + b); } catch (e) {}
+    box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Позвать своих: ссылка на свой знак (тот, кого позвали, теперь сам зовёт).
+  $('invite').addEventListener('click', async () => {
+    const mine = D.sender ? b : (b || a);
+    const url = D.base + D.prefix + '/c/' + mine + '/';
+    const text = fmt(T.shareText, { sign: sign(mine).name });
+    try {
+      if (navigator.share) { await navigator.share({ text: text, url: url }); return; }
+    } catch (e) { if (e && e.name === 'AbortError') return; }
+    try { await navigator.clipboard.writeText(text + ' ' + url); toast(T.copied); } catch (e) { prompt(T.copy, url); }
+  });
+
+  function toast(s) {
+    const t = $('toast');
+    t.textContent = s;
+    t.classList.add('on');
+    setTimeout(() => t.classList.remove('on'), 2000);
+  }
+
+  // ?with=<знак> (вернулись по ссылке или обновили страницу): сразу показать пару.
+  const w = new URLSearchParams(location.search).get('with');
+  paint();
+  if (w && sign(w) && a) { active = 'B'; choose(w); }
+})();
+</script>
+</body>
+</html>
