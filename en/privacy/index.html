@@ -56,9 +56,9 @@ footer a { margin-right: 14px; }
     <a class="lang" href="https://leks2000.github.io/kotost/privacy/" hreflang="ru">Русский</a>
   </div>
   <h1>Privacy Policy</h1>
-  <p class="date">The Kotost Tarot app (tarot and horoscope). Version of November 13, 2026.</p>
+  <p class="date">The Kotost Tarot app (tarot and horoscope). Version of November 14, 2026.</p>
 
-  <div class="box"><p><b>In short.</b> Your name, birth date, time and place, your reading journal and settings stay on your phone. The server receives your question to the cards (so Kotost can answer), calculated planet positions (without your birth date or place), a random in-app device number and purchase receipts. There are no ads and no ad trackers, and we never sell data.</p></div>
+  <div class="box"><p><b>In short.</b> Your name, birth date, time and place, your reading journal and settings stay on your phone. The server receives your question to the cards (so Kotost can answer), calculated planet positions (without your birth date or place), a random in-app device number, purchase receipts and anonymous usage statistics (which screens are opened, without questions or birth data). There are no ads and no ad trackers, and we never sell data.</p></div>
 
   <h2>1. What stays on your phone</h2>
   <ul>
@@ -66,7 +66,7 @@ footer a { margin-right: 14px; }
     <li>Birth date, time and city, yours and those of people you added for compatibility.</li>
     <li>Your reading journal, "did it come true" marks, card collection, streak and settings.</li>
   </ul>
-  <p>The birth chart, destiny matrix, compatibility and moon calendar are calculated on the phone. Morning notifications and widgets also work without the server. If Android backup is turned on in your phone settings, the system may save app data to your Google account: this is controlled by your phone, not by us.</p>
+  <p>The birth chart, destiny matrix, compatibility and moon calendar are calculated on the phone. Morning notifications and widgets also work without the server. This data is excluded from Android cloud backup (your Google account): the app leaves it out of the backup. If you move to a new phone directly (by cable or Wi-Fi), it may move along with the app.</p>
 
   <h2>2. What goes to the server and why</h2>
   <ul>
@@ -76,6 +76,7 @@ footer a { margin-right: 14px; }
     <li><b>Your internet address (IP)</b> is visible to the server with every request. We only keep its hash (a one-way fingerprint) in the request counter to protect the free limit from abuse.</li>
     <li><b>Purchase receipts</b> from RuStore or Google Play: purchase number, item, subscription period. Needed to verify payment and unlock Kotost+. We never see or receive your card details: the store handles payment.</li>
     <li><b>Reports and problem messages</b> you send yourself: your text, and for a report on an answer also the question, the cards and the answer itself.</li>
+    <li><b>Usage statistics and crash reports</b> (AppMetrica service). Which steps you took: onboarding, card of the day, a question to the cards (only the spread type, never the question text), whether the AI or a ready-made text answered, the limit and Kotost+ screens, purchases, sharing, opening from a notification or widget. AppMetrica also receives the phone model, Android and app version, language, country and city by IP, and its own random install number. The app does not send the advertising ID or precise location. If the app crashes, a technical error report is sent. Your name, birth date and place, question text, answers and journal are never included. We need this to fix bugs and see what works.</li>
   </ul>
 
   <h2>3. Who processes data</h2>
@@ -83,6 +84,7 @@ footer a { margin-right: 14px; }
     <li><b>Supabase</b>: the app server (functions and database).</li>
     <li><b>Google Gemini</b> and the backup service <b>OpenRouter</b>: AI models that write the reading from your question and cards.</li>
     <li><b>RuStore</b> or <b>Google Play</b>: payments and subscriptions, under their own rules.</li>
+    <li><b>AppMetrica</b> (Yandex LLC): usage statistics and crash reports, under Yandex rules (yandex.com/legal/confidential).</li>
   </ul>
   <p>Data is not shared with or sold to anyone else. The app has no ads.</p>
 
@@ -90,6 +92,7 @@ footer a { margin-right: 14px; }
   <ul>
     <li>Request counters (device number, address hash, requests per day): 90 days.</li>
     <li>Reports and problem messages: 1 year.</li>
+    <li>Statistics and crash reports in AppMetrica: for the service's retention period, no longer than needed for analysis.</li>
     <li>Purchases and subscriptions: while they are active, and as long as payment record laws require.</li>
   </ul>
 
