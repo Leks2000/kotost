@@ -71,6 +71,8 @@ footer a { margin-right: 14px; }
   <h2>2. What goes to the server and why</h2>
   <ul>
     <li><b>Your question and the names of the drawn cards.</b> Needed for the AI to write the reading. We do not store the question text: it goes to the AI model and is not kept anywhere on our side after the answer.</li>
+    <li><b>"Kotost remembers".</b> Along with a new question, the AI receives the name of today's card of the day and one past spread you marked "came true" in your journal: only the names of its cards and how many days ago it was. The text of past questions and answers is never sent. This lets Kotost say, for example, "three days ago the Tower came up, and you marked it: came true".</li>
+    <li><b>A follow-up question to a spread</b>: your follow-up, the original question, the card names and a short summary of the previous answer. Not stored, just like a regular question.</li>
     <li><b>Planet positions</b> (for example, "Moon in Cancer, 4th house") for the personal horoscope and birth chart reading. Your birth date, time and place are not sent.</li>
     <li><b>A random device number.</b> The app creates it itself; it is not linked to your name, phone number or any account. The server uses it to count free questions per day and to remember purchases.</li>
     <li><b>Your internet address (IP)</b> is visible to the server with every request. We only keep its hash (a one-way fingerprint) in the request counter to protect the free limit from abuse.</li>
