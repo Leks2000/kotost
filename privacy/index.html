@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Политика конфиденциальности · Kotost</title>
+<meta name="description" content="Какие данные приложение Таро Kotost хранит на телефоне и что уходит на сервер.">
+<meta name="theme-color" content="#1A0F1D">
+<link rel="icon" href="https://leks2000.github.io/kotost/kotost.png">
+<link rel="alternate" hreflang="en" href="https://leks2000.github.io/kotost/en/privacy/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1A0F1D; --surface: #2B1B30; --border: #4A3350;
+  --text: #F7EDE6; --soft: #DCC9D6; --muted: #BCA5B8; --gold: #E8C27A;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(ellipse 120% 50% at 50% -10%, #3a1f45 0%, transparent 60%);
+  color: var(--text);
+  font: 400 16px/1.6 Inter, system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+.valance { display: block; width: 100%; height: 34px; }
+.wrap { max-width: 680px; margin: 0 auto; padding: 4px 16px 48px; }
+.top { display: flex; align-items: center; justify-content: space-between; margin: 6px 0 22px; }
+.brand { font: 600 15px Unbounded, sans-serif; letter-spacing: .14em; color: var(--gold); text-decoration: none; }
+.lang { color: var(--muted); font-size: 13px; text-decoration: none; border: 1px solid var(--border); border-radius: 99px; padding: 4px 12px; }
+h1 { font: 600 24px/1.3 Unbounded, sans-serif; margin: 0 0 6px; text-wrap: balance; }
+.date { color: var(--muted); font-size: 13px; margin: 0 0 24px; }
+h2 { font: 600 17px/1.35 Unbounded, sans-serif; color: var(--gold); margin: 28px 0 8px; }
+p, li { color: var(--soft); font-size: 15px; }
+p { margin: 0 0 12px; }
+ul { margin: 0 0 12px; padding-left: 20px; }
+li { margin-bottom: 6px; }
+b { color: var(--text); font-weight: 700; }
+a { color: var(--gold); }
+.box { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px 16px; margin: 0 0 16px; }
+.box p:last-child { margin: 0; }
+footer { color: var(--muted); font-size: 13px; margin-top: 36px; border-top: 1px solid var(--border); padding-top: 14px; }
+footer a { margin-right: 14px; }
+</style>
+</head>
+<body>
+<svg class="valance" viewBox="0 0 400 34" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0H400V14Q387.5 34 375 14Q362.5 34 350 14Q337.5 34 325 14Q312.5 34 300 14Q287.5 34 275 14Q262.5 34 250 14Q237.5 34 225 14Q212.5 34 200 14Q187.5 34 175 14Q162.5 34 150 14Q137.5 34 125 14Q112.5 34 100 14Q87.5 34 75 14Q62.5 34 50 14Q37.5 34 25 14Q12.5 34 0 14Z" fill="#2B1B30" stroke="#E8C27A" stroke-opacity=".55" stroke-width="1"/>
+</svg>
+<main class="wrap">
+  <div class="top">
+    <a class="brand" href="https://leks2000.github.io/kotost/">KOTOST</a>
+    <a class="lang" href="https://leks2000.github.io/kotost/en/privacy/" hreflang="en">English</a>
+  </div>
+  <h1>Политика конфиденциальности</h1>
+  <p class="date">Приложение «Таро Kotost» (таро и гороскоп). Редакция от 13 ноября 2026.</p>
+
+  <div class="box"><p><b>Коротко.</b> Имя, дата, время и место рождения, дневник раскладов и настройки хранятся только на твоём телефоне. На сервер уходит вопрос к картам (чтобы Kotost ответила), посчитанные положения планет (без даты и места рождения), случайный номер телефона в приложении и чеки покупок. Рекламы и рекламных трекеров нет, данные мы не продаём.</p></div>
+
+  <h2>1. Что хранится только на телефоне</h2>
+  <ul>
+    <li>Имя, которое ты ввела в приложении.</li>
+    <li>Дата, время и город рождения, твои и людей, которых ты добавила для совместимости.</li>
+    <li>Дневник раскладов, отметки «сбылось», коллекция карт, стрик, настройки.</li>
+  </ul>
+  <p>Натальная карта, матрица судьбы, совместимость и лунный календарь считаются на телефоне. Утренние уведомления и виджеты тоже работают без сервера. Если в настройках телефона включена резервная копия Android, система может сохранить данные приложения в твоём аккаунте Google: этим управляет телефон, а не мы.</p>
+
+  <h2>2. Что уходит на сервер и зачем</h2>
+  <ul>
+    <li><b>Вопрос к картам и названия выпавших карт.</b> Нужны, чтобы ИИ написал толкование. Текст вопроса мы не сохраняем: он уходит к модели ИИ и после ответа нигде у нас не лежит.</li>
+    <li><b>Положения планет</b> (например, «Луна в Раке, в 4-м доме») для персонального гороскопа и разбора натальной карты. Дата, время и место рождения на сервер не уходят.</li>
+    <li><b>Случайный номер устройства.</b> Приложение создаёт его само, он не связан с твоим именем, телефоном или аккаунтом. По нему сервер считает бесплатные вопросы в день и помнит покупки.</li>
+    <li><b>Адрес в интернете (IP)</b> сервер видит при каждом запросе. Мы храним только его хэш (необратимый отпечаток) в счётчике запросов, чтобы защитить бесплатный лимит от злоупотреблений.</li>
+    <li><b>Чеки покупок</b> от RuStore или Google Play: номер покупки, товар, срок подписки. Нужны, чтобы проверить оплату и открыть Kotost+. Данные карты мы не видим и не получаем: оплату проводит магазин.</li>
+    <li><b>Жалобы и сообщения о проблеме</b>, которые ты отправляешь сама: твой текст, а для жалобы на ответ ещё вопрос, карты и сам ответ.</li>
+  </ul>
+
+  <h2>3. Кто обрабатывает данные</h2>
+  <ul>
+    <li><b>Supabase</b>: сервер приложения (функции и база данных).</li>
+    <li><b>Google Gemini</b> и запасной сервис <b>OpenRouter</b>: модели ИИ, которые пишут толкование по вопросу и картам.</li>
+    <li><b>RuStore</b> или <b>Google Play</b>: оплата и подписки, по их собственным правилам.</li>
+  </ul>
+  <p>Другим компаниям данные не передаются и не продаются. Рекламы в приложении нет.</p>
+
+  <h2>4. Сколько хранится</h2>
+  <ul>
+    <li>Счётчики запросов (номер устройства, хэш адреса, число запросов в день): 90 дней.</li>
+    <li>Жалобы и сообщения о проблеме: 1 год.</li>
+    <li>Покупки и подписки: пока они действуют, и столько, сколько требует закон об учёте платежей.</li>
+  </ul>
+
+  <h2>5. Как удалить данные</h2>
+  <p>На телефоне: Профиль → Мои данные и удаление → «Удалить данные». Стирается всё, кроме номера устройства и недоставленных чеков: без них пропали бы твои покупки. Удалить приложение тоже значит стереть всё с телефона.</p>
+  <p>На сервере: Профиль → «Сообщить о проблеме», напиши «удалите мои данные». Сообщение придёт вместе с номером устройства, и мы удалим счётчики, жалобы и всё, что связано с этим номером, кроме записей о покупках, которые нужно хранить по закону.</p>
+
+  <h2>6. Дети</h2>
+  <p>Приложение рассчитано на людей от 12 лет и не собирает данные специально о детях.</p>
+
+  <h2>7. Безопасность</h2>
+  <p>Связь с сервером идёт по HTTPS. Доступ к базе есть только у функций сервера, не у приложения напрямую.</p>
+
+  <h2>8. Изменения и связь</h2>
+  <p>Если политика изменится, новая редакция появится на этой странице с новой датой. Вопросы и просьбы: Профиль → «Сообщить о проблеме».</p>
+
+  <footer>
+    <a href="https://leks2000.github.io/kotost/privacy/">Политика конфиденциальности</a><a href="https://leks2000.github.io/kotost/terms/">Условия подписки и покупок</a><a href="https://leks2000.github.io/kotost/">Kotost</a>
+  </footer>
+</main>
+</body>
+</html>
