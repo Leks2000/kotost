@@ -91,6 +91,8 @@ h1 { font: 600 24px/1.25 Unbounded, sans-serif; text-align: center; margin: 0 0 
 .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--surface-hi); border: 1px solid var(--border); padding: 10px 16px; border-radius: 99px; font-size: 14px; opacity: 0; transition: opacity .3s; pointer-events: none; }
 .toast.on { opacity: 1; }
 footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 28px; }
+footer.seller { margin-top: 10px; }
+footer.seller a { color: var(--muted); }
 .hide { display: none !important; }
 @media (prefers-reduced-motion: reduce) { .card { animation: none; } .fill, .badge { transition: none; } }
 </style>
@@ -127,6 +129,7 @@ footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 2
     <button class="btn line hide" id="invite" type="button"></button>
   </div>
   <footer id="foot"></footer>
+  <footer class="seller"><a href="https://leks2000.github.io/kotost/pay/">Цены и оплата</a> · <a href="https://leks2000.github.io/kotost/terms/">Условия подписки и покупок</a><br>Самозанятый Халле Александр · ИНН 470327823343 · dextyprod@mail.ru</footer>
 </div>
 <div class="toast" id="toast"></div>
 <script>
