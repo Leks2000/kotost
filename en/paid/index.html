@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kotost payment</title>
+<meta name="description" content="Back to the app after paying via YooKassa.">
+<meta name="theme-color" content="#1A0F1D">
+<link rel="icon" href="https://leks2000.github.io/kotost/kotost.png">
+<link rel="alternate" hreflang="ru" href="https://leks2000.github.io/kotost/paid/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1A0F1D; --surface: #2B1B30; --border: #4A3350;
+  --text: #F7EDE6; --soft: #DCC9D6; --muted: #BCA5B8; --gold: #E8C27A;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  background-image: radial-gradient(ellipse 120% 50% at 50% -10%, #3a1f45 0%, transparent 60%);
+  color: var(--text);
+  font: 400 16px/1.6 Inter, system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+.valance { display: block; width: 100%; height: 34px; }
+.wrap { max-width: 680px; margin: 0 auto; padding: 4px 16px 48px; }
+.top { display: flex; align-items: center; justify-content: space-between; margin: 6px 0 22px; }
+.brand { font: 600 15px Unbounded, sans-serif; letter-spacing: .14em; color: var(--gold); text-decoration: none; }
+.lang { color: var(--muted); font-size: 13px; text-decoration: none; border: 1px solid var(--border); border-radius: 99px; padding: 4px 12px; }
+h1 { font: 600 24px/1.3 Unbounded, sans-serif; margin: 0 0 6px; text-wrap: balance; }
+.date { color: var(--muted); font-size: 13px; margin: 0 0 24px; }
+h2 { font: 600 17px/1.35 Unbounded, sans-serif; color: var(--gold); margin: 28px 0 8px; }
+p, li { color: var(--soft); font-size: 15px; }
+p { margin: 0 0 12px; }
+ul { margin: 0 0 12px; padding-left: 20px; }
+li { margin-bottom: 6px; }
+b { color: var(--text); font-weight: 700; }
+a { color: var(--gold); }
+.box { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px 16px; margin: 0 0 16px; }
+.box p:last-child { margin: 0; }
+footer { color: var(--muted); font-size: 13px; margin-top: 36px; border-top: 1px solid var(--border); padding-top: 14px; }
+footer a { margin-right: 14px; }
+</style>
+</head>
+<body>
+<svg class="valance" viewBox="0 0 400 34" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0H400V14Q387.5 34 375 14Q362.5 34 350 14Q337.5 34 325 14Q312.5 34 300 14Q287.5 34 275 14Q262.5 34 250 14Q237.5 34 225 14Q212.5 34 200 14Q187.5 34 175 14Q162.5 34 150 14Q137.5 34 125 14Q112.5 34 100 14Q87.5 34 75 14Q62.5 34 50 14Q37.5 34 25 14Q12.5 34 0 14Z" fill="#2B1B30" stroke="#E8C27A" stroke-opacity=".55" stroke-width="1"/>
+</svg>
+<main class="wrap">
+  <div class="top">
+    <a class="brand" href="https://leks2000.github.io/kotost/en/">KOTOST</a>
+    <a class="lang" href="https://leks2000.github.io/kotost/paid/" hreflang="ru">Русский</a>
+  </div>
+<h1>Head back to Kotost</h1>
+  <div class="box"><p>If the payment went through, Kotost+ or your purchase turns on as soon as you open the app. Usually it takes a couple of seconds, sometimes up to a couple of minutes.</p></div>
+  <p><a class="btn" href="kotost://pay">Back to Kotost</a></p>
+  <p>Button didn't work? Just open Kotost yourself. If the payment was cancelled, no money was taken.</p>
+  <style>.btn{display:inline-block;background:var(--gold);color:#1A0F1D;font-weight:700;text-decoration:none;border-radius:16px;padding:14px 22px;margin:8px 0}</style>
+  <script>setTimeout(function(){if(/Android/i.test(navigator.userAgent))location.href="kotost://pay"},400)</script>
+
+  <footer>
+    <a href="https://leks2000.github.io/kotost/en/privacy/">Privacy Policy</a><a href="https://leks2000.github.io/kotost/en/terms/">Subscription and Purchase Terms</a><a href="https://leks2000.github.io/kotost/en/">Kotost</a>
+  </footer>
+</main>
+</body>
+</html>
