@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Дневник давления: оплата</title>
+<style>
+  body { margin:0; background:#F6F8F7; color:#13302E; font:18px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:440px; margin:0 auto; padding:48px 20px; display:flex; flex-direction:column; gap:16px; }
+  h1 { font-size:28px; line-height:1.15; margin:0; }
+  p { margin:0; color:#5B6E6B; }
+  a { display:flex; align-items:center; justify-content:center; min-height:60px; border-radius:20px; background:#0F5F5C; color:#fff; text-decoration:none; font-weight:700; font-size:20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Спасибо!</h1>
+  <p>Вернитесь в приложение: оно само проверит оплату. Если доступ не открылся сразу, подождите минуту и откройте приложение ещё раз.</p>
+  <a href="pressure://pay">Вернуться в приложение</a>
+</main>
+<script>setTimeout(function () { location.href = 'pressure://pay'; }, 400);</script>
+</body>
+</html>

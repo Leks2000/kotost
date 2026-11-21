@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Дневник давления: приглашение</title>
+<style>
+  :root { --pri:#0F5F5C; --bg:#F6F8F7; --text:#13302E; --muted:#5B6E6B; --soft:#E3F2EA; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:18px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:440px; margin:0 auto; padding:40px 20px; display:flex; flex-direction:column; gap:16px; }
+  .ic { width:88px; height:88px; border-radius:24px; background:var(--pri); color:#fff; display:flex; align-items:center; justify-content:center; font-size:44px; }
+  h1 { font-size:28px; line-height:1.15; margin:8px 0 0; }
+  p { margin:0; color:var(--muted); }
+  a.btn { display:flex; align-items:center; justify-content:center; min-height:60px; border-radius:20px; background:var(--pri); color:#fff; text-decoration:none; font-weight:700; font-size:20px; }
+  a.ghost { background:var(--soft); color:var(--pri); }
+  .card { background:var(--soft); border-radius:20px; padding:14px 16px; color:var(--text); font-size:16px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="ic">♥</div>
+  <h1>Вас просят показать давление</h1>
+  <p>Близкий человек хочет видеть ваше давление и таблетки, чтобы знать, что с вами всё хорошо. Нужно нажать одну кнопку.</p>
+  <a class="btn" id="open" href="#">Открыть в приложении</a>
+  <a class="btn ghost" id="store" href="#">Установить приложение</a>
+  <div class="card">Если приложения ещё нет: установите его, а потом нажмите на ссылку из сообщения ещё раз.</div>
+  <p style="font-size:16px">Ключ доступа есть только в этой ссылке и на двух телефонах. На сервер он не попадает.</p>
+</main>
+<script>
+  // Ссылка вида …/j/#i=<приглашение>&k=<ключ>. Часть после # браузер на сервер не отправляет.
+  var STORE = 'https://www.rustore.ru/catalog/app/com.kotost.pressure';
+  var q = location.hash.replace(/^#/, '');
+  var app = 'pressure://j?' + q;
+  var intent = 'intent://j?' + q + '#Intent;scheme=pressure;package=com.kotost.pressure;S.browser_fallback_url=' + encodeURIComponent(STORE) + ';end';
+  var android = /Android/i.test(navigator.userAgent);
+  document.getElementById('open').href = android ? intent : app;
+  document.getElementById('store').href = STORE;
+  if (android && /i=.+&k=.+/.test(q)) location.href = intent; // сразу в приложение, нет приложения: магазин
+</script>
+</body>
+</html>
